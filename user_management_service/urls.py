@@ -1,8 +1,6 @@
 from django.urls import path
 
 from user_management_service.controllers.CitizenController import CitizenController
-from user_management_service.controllers.MaterialController import MaterialController
-from user_management_service.controllers.RecycleRequestController import RecycleRequestController
 
 
 urlpatterns = [
@@ -29,16 +27,9 @@ urlpatterns = [
     path("googleLogin/", CitizenController.googleLogin),
 
     path("facebookLoginGateway/", CitizenController.facebookLoginGateway),
-    path("facebookLogin/", CitizenController.facebookLogin),
-
-     #material paths
-    path("addMaterial/", MaterialController.addMaterial),
+    path("facebookLogin/", CitizenController.facebookLogin)
 
 
-
-    #recycle request paths
-    path("makeRecycleRequest", RecycleRequestController.makeRecycleRequest),
-    path("withdrawRecycleRequest", RecycleRequestController.withdrawRecycleRequest)
 
 
 
