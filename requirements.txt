@@ -9,7 +9,7 @@ jsonschema==4.6.0
 Pillow==9.2.0
 pipenv==2022.4.21
 py-ubjson==0.16.1
-PyInstaller==3.5+498e6ee058
+PyInstaller==5.6.1
 PyJWT==2.4.0
 requests==2.27.1
 requests-file==1.5.1
