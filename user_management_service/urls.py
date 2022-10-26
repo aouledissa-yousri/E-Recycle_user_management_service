@@ -1,6 +1,6 @@
 from django.urls import path
 
-from user_management_service.controllers.CitizenController import CitizenController
+from user_management_service.controllers import CitizenController
 
 
 urlpatterns = [

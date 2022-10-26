@@ -3,7 +3,7 @@ from os import stat
 import requests
 from django import http
 import requests
-from user_management_service.classes.Citizen import Citizen
+from user_management_service.models import Citizen
 from Global.settings import CORE_URL
 from user_management_service.helpers.ResponseHelper import ResponseHelper
 

@@ -1,5 +1,3 @@
-import json
-from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from user_management_service.decorators import checkAccessToken
@@ -19,12 +17,6 @@ class CitizenController:
     @staticmethod
     def login(request):
         return JsonResponse({"result": CitizenService.login(request)})
-
-# class CitizenController:s
-#     @staticmethod
-#     def addCitizen(request):
-#         request = json.loads(request.body)
-
 
     @api_view(["DELETE"])
     @staticmethod
