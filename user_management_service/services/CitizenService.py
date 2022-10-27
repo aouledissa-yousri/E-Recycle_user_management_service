@@ -14,7 +14,7 @@ class CitizenService:
     def signUp(request):
         requestData = json.loads(request.body)["data"]
         citizen =  Citizen()
-        citizen.setData(request)
+        citizen.setData(requestData)
         response=requests.post(CORE_URL+'signUp/',json=citizen.getData())
         return ResponseHelper.responseResult(response)
 
