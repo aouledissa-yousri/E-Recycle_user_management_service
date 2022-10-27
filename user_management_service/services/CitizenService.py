@@ -12,7 +12,7 @@ class CitizenService:
 
     @staticmethod 
     def signUp(request):
-        request = json.loads(request.body)
+        requestData = json.loads(request.body)["data"]
         citizen =  Citizen()
         citizen.setData(request)
         response=requests.post(CORE_URL+'signUp/',json=citizen.getData())
@@ -20,8 +20,8 @@ class CitizenService:
 
     @staticmethod
     def login(request):
-        request = json.loads(request.body)
-        response=requests.post(CORE_URL+'login/', json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.post(CORE_URL+'login/', json = requestData)
         return ResponseHelper.responseResult(response)
 
 
@@ -52,32 +52,32 @@ class CitizenService:
     
     @staticmethod
     def confirmAccount(request):
-        request = json.loads(request.body)
-        response=requests.patch(CORE_URL+'confirmAccount/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.patch(CORE_URL+'confirmAccount/',json = requestData)
         return ResponseHelper.responseResult(response)
 
 
     
     @staticmethod
     def enableTwoFactorAuth(request):
-        request = request.headers['token']
-        response=requests.patch(CORE_URL+'enableTwoFactorAuth/',headers={'token': request})
+        token = request.headers['token']
+        response=requests.patch(CORE_URL+'enableTwoFactorAuth/',headers={'token': token})
         return ResponseHelper.responseResult(response)
 
 
 
     @staticmethod
     def disableTwoFactorAuth(request):
-        request = request.headers['token']
-        response=requests.patch(CORE_URL+'disableTwoFactorAuth/',headers={'token': request})
+        token = request.headers['token']
+        response=requests.patch(CORE_URL+'disableTwoFactorAuth/',headers={'token': token})
         return ResponseHelper.responseResult(response)
 
 
     
     @staticmethod
     def twoFactorAuth(request):
-        request = json.loads(request.body)
-        response=requests.patch(CORE_URL+'twoFactorAuth/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.patch(CORE_URL+'twoFactorAuth/',json = requestData)
         return ResponseHelper.responseResult(response)
 
     
@@ -85,8 +85,8 @@ class CitizenService:
 
     @staticmethod
     def requestPasswordReset(request):
-        request = json.loads(request.body)
-        response=requests.post(CORE_URL+'requestPasswordReset/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.post(CORE_URL+'requestPasswordReset/',json = requestData)
         return ResponseHelper.responseResult(response)
 
 
@@ -96,16 +96,16 @@ class CitizenService:
 
     @staticmethod
     def checkPasswordResetCode(request):
-        request = json.loads(request.body)
-        response=requests.delete(CORE_URL+'checkPasswordResetCode/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.delete(CORE_URL+'checkPasswordResetCode/',json = requestData)
         return ResponseHelper.responseResult(response)
 
     
 
     @staticmethod
     def resetPassword(request):
-        request = json.loads(request.body)
-        response=requests.patch(CORE_URL+'resetPassword/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.patch(CORE_URL+'resetPassword/',json = requestData)
         return ResponseHelper.responseResult(response)
 
         
@@ -113,8 +113,8 @@ class CitizenService:
 
     @staticmethod
     def changePassword(request):
-        request = json.loads(request.body)
-        response=requests.patch(CORE_URL+'changePassword/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.patch(CORE_URL+'changePassword/',json = requestData)
         return ResponseHelper.responseResult(response)
 
     
@@ -130,8 +130,8 @@ class CitizenService:
 
     #google login 
     def googleLogin(request):
-        request = json.loads(request.body)
-        response=requests.get(CORE_URL+'googleLogin/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.get(CORE_URL+'googleLogin/',json = requestData)
         return ResponseHelper.responseResult(response)
 
         
@@ -145,8 +145,8 @@ class CitizenService:
 
     #facebook login
     def facebookLogin(request):
-        request = json.loads(request.body)
-        response=requests.get(CORE_URL+'facebookLogin/',json = request)
+        requestData = json.loads(request.body)["data"]
+        response=requests.get(CORE_URL+'facebookLogin/',json = requestData)
         return ResponseHelper.responseResult(response)
 
     
