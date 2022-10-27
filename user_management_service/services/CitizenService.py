@@ -21,31 +21,31 @@ class CitizenService:
     @staticmethod
     def login(request):
         request = json.loads(request.body)
-        response=requests.post(CORE_URL+'login/',json =request)
+        response=requests.post(CORE_URL+'login/', json = request)
         return ResponseHelper.responseResult(response)
 
 
     
     @staticmethod
     def logout(request):
-        request = request.headers['token']
-        response=requests.delete(CORE_URL+'logout/',headers={'token': request})
+        token = request.headers['token']
+        response=requests.delete(CORE_URL+'logout/',headers={'token': token})
         return ResponseHelper.responseResult(response)
 
 
     
     @staticmethod
     def logoutAllSessions(request):
-        request = request.headers['token']
-        response=requests.delete(CORE_URL+'logoutAllSessions/',headers={'token': request})
+        token = request.headers['token']
+        response=requests.delete(CORE_URL+'logoutAllSessions/',headers={'token': token})
         return ResponseHelper.responseResult(response)
 
 
     
     @staticmethod
     def logoutAllOtherSessions(request):
-        request = request.headers['token']
-        response=requests.delete(CORE_URL+'logoutAllOtherSessions/',headers={'token': request})
+        token = request.headers['token']
+        response=requests.delete(CORE_URL+'logoutAllOtherSessions/',headers={'token': token})
         return ResponseHelper.responseResult(response)
 
 

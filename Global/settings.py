@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
 ]
 
 #testing
-#CORE_URL='http://127.0.0.1:7000/core/'
+#CORE_URL='http://127.0.0.1:8000/core/'
 
 #production
 CORE_URL='https://e-recyclecoreservice-production.up.railway.app/core/' 

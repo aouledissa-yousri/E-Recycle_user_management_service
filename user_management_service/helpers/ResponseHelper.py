@@ -2,7 +2,6 @@ class ResponseHelper:
     @staticmethod
     def responseResult(response):
         if response.status_code == 200 :
-
-            return response.text
+            return response.json()
         else:
-            return "Error has occured"
+            return {"message": "Error has occured"}
