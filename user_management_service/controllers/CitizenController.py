@@ -88,21 +88,12 @@ class CitizenController:
     @api_view(["GET"])
     def googleLoginGateway(request):
         return JsonResponse(CitizenService.googleLoginGateway()) 
-    
 
-    @api_view(["GET"])
-    def googleLogin(request):
-        return JsonResponse(CitizenService.googleLogin(request))
-    
 
     @api_view(["GET"])
     def facebookLoginGateway(request):
         return JsonResponse(CitizenService.facebookLoginGateway())
     
-
-    @api_view(["GET"])
-    def facebookLogin(request):
-        return JsonResponse(CitizenService.facebookLogin(request))
     
         
 

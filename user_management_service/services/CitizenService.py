@@ -1,11 +1,8 @@
-import json
-from os import stat
-import requests
-from django import http
-import requests
 from user_management_service.models import Citizen
-from Global.settings import CORE_URL
 from user_management_service.helpers.ResponseHelper import ResponseHelper
+from Global.settings import CORE_URL
+import requests, json
+
 
 class CitizenService:
     
@@ -17,6 +14,8 @@ class CitizenService:
         citizen.setData(requestData)
         response=requests.post(CORE_URL+'signUp/',json=citizen.getData())
         return ResponseHelper.responseResult(response)
+
+
 
     @staticmethod
     def login(request):
@@ -126,16 +125,6 @@ class CitizenService:
         return ResponseHelper.responseResult(response)
 
 
-    
-
-    #google login 
-    def googleLogin(request):
-        requestData = json.loads(request.body)["data"]
-        response=requests.get(CORE_URL+'googleLogin/',json = requestData)
-        return ResponseHelper.responseResult(response)
-
-        
-    
 
     #redirect to facebook login page
     def facebookLoginGateway():
@@ -143,11 +132,7 @@ class CitizenService:
         return ResponseHelper.responseResult(response)
 
 
-    #facebook login
-    def facebookLogin(request):
-        requestData = json.loads(request.body)["data"]
-        response=requests.get(CORE_URL+'facebookLogin/',json = requestData)
-        return ResponseHelper.responseResult(response)
+    
 
     
 

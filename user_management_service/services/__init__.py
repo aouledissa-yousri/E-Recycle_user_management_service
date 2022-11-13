@@ -1,1 +1,2 @@
 from .CitizenService import CitizenService
+from .CollectorService import CollectorService
