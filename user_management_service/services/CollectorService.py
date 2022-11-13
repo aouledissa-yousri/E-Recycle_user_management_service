@@ -22,6 +22,7 @@ class CollectorService:
 
 
     #redirect to facebook login page
+    @staticmethod
     def facebookLoginGateway(request):
         response=requests.get(CORE_URL+'collector/facebookLoginGateway')
         return ResponseHelper.responseResult(response)

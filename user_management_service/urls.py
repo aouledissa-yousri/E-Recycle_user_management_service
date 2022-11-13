@@ -24,8 +24,10 @@ urlpatterns = [
 
 
     path("googleLoginGateway/", CitizenController.googleLoginGateway),
+    path("collector/googleLoginGateway/", CitizenController.googleLoginGateway),
 
     path("facebookLoginGateway/", CitizenController.facebookLoginGateway),
+    path("collector/facebookLoginGateway/", CitizenController.facebookLoginGateway),
 
 
 
