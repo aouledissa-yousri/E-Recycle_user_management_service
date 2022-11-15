@@ -27,7 +27,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(STATIC_URL, 'static')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost", 
