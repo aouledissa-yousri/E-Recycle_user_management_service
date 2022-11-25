@@ -27,7 +27,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(STATIC_URL, 'static')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost", 
@@ -36,10 +36,10 @@ ALLOWED_HOSTS = [
 ]
 
 #testing
-#CORE_URL='http://127.0.0.1:8000/core/'
+CORE_URL='http://127.0.0.1:8000/core/'
 
 #production
-CORE_URL = 'https://e-recyclecoreservice-production-ffdc.up.railway.app/core/' 
+#CORE_URL = 'https://e-recyclecoreservice-production-ffdc.up.railway.app/core/' 
 
 
 

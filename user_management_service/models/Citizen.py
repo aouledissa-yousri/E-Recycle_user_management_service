@@ -2,13 +2,12 @@ class Citizen():
 
     def __init__(self,*args):
 
-        if len(args)>0:
-            self.name = args[0]
-            self.lastname = args[1]
-            self.user_profile= args[2]
+        self.name = None
+        self.lastname = None
+        self.user_profile= None
+        self.recycleCoins = 0
         
-        else:
-            pass
+       
 
 
     def getData(self):
@@ -16,10 +15,12 @@ class Citizen():
             "name": self.name,
             "lastname": self.lastname,
             "user_profile": self.user_profile,
+            "recycleCoins": self.recycleCoins
         }
     
     def setData(self, data):
         self.name = data["name"]
         self.lastname = data["lastname"]
         self.user_profile = data["user_profile"]
+        self.recycleCoins = data["recycleCoins"]
        
