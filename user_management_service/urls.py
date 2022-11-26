@@ -1,6 +1,6 @@
 from django.urls import path
 
-from user_management_service.controllers import CitizenController
+from user_management_service.controllers import *
 
 
 urlpatterns = [
@@ -30,10 +30,8 @@ urlpatterns = [
     path("collector/facebookLoginGateway/", CitizenController.facebookLoginGateway),
 
 
-
-
-
-
+    #collector paths
+    path("collector/signUp/", CollectorController.signUp),
 
    
 ]
