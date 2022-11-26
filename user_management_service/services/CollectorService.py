@@ -10,7 +10,7 @@ class CollectorService:
         requestData = json.loads(request.body)["data"]
         collector =  Collector()
         collector.setData(requestData)
-        response=requests.post(CORE_URL+'signUp/',json=collector.getData())
+        response=requests.post(CORE_URL+'collector/signUp/',json=collector.getData())
         return ResponseHelper.responseResult(response)
     
 
